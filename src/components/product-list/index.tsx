@@ -56,19 +56,26 @@ export default function ProductList() {
                 <div className="text-center mb-2">
                   {product.originalPrice && (
                     <span className="text-lg text-gray-500 line-through block">
-                      de R$ {product.originalPrice} por:
+                      de {product.originalPrice.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                      })} por:
                     </span>
                   )}
                   <span className="text-4xl font-extrabold text-elevita block">
-                    R$ {product.price}
+                    {product.price.toLocaleString('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL'
+                    })}
                   </span>
                 </div>
 
                 <div className="text-center mb-4">
                   <span className="text-sm text-support">
-                    ou 12x de R${" "}
-                    {(product.price / 12).toFixed(2).replace(".", ",")} sem
-                    juros
+                    ou 12x de {(product.price / 12).toLocaleString('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL'
+                    })} sem juros
                   </span>
                 </div>
 
