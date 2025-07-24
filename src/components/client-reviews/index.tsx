@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Button from "../button";
+import Link from "next/link";
 
 interface Review {
   id: number;
@@ -106,9 +107,11 @@ export default function ClientReviews() {
               Transforme sua vida hoje mesmo com nossos nutracêuticos premium
             </p>
             <div className="flex justify-center mb-6">
-              <Button variant="callToAction" className="bg-white">
-                Começar Minha Transformação Agora!
-              </Button>
+              <Link href={"#products"}>
+                <Button variant="callToAction" className="bg-white">
+                  Começar Minha Transformação Agora!
+                </Button>
+              </Link>
             </div>
             <p className="text-sm opacity-80">
               Oferta por tempo limitado - Últimas unidades disponíveis

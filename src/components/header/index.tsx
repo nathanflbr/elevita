@@ -1,6 +1,7 @@
 import { LockKeyhole, Repeat } from "lucide-react";
 import VideoPlayer from "./video-player";
 import Button from "../button";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -18,9 +19,11 @@ export default function Header() {
           showControls={true}
           showInfo={true}
         />
-        <Button variant="primary" className="mt-9">
-          Garantir meu Kit Hoje Mesmo
-        </Button>
+        <Link href={"#products"}>
+          <Button variant="primary" className="mt-9">
+            Garantir meu Kit Hoje Mesmo
+          </Button>
+        </Link>
         <ul className="flex flex-col justify-center items-center text-support font-semibold mt-6 gap-3 xs:flex-row">
           <li className="flex items-center gap-2">
             <LockKeyhole /> Compra Segura

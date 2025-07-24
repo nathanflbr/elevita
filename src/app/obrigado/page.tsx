@@ -8,7 +8,7 @@ export default function Obrigado() {
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-gray-50 py-12 px-4">
+      <section className="min-h-screen bg-[#FEF4F9] py-12 px-4">
         <div className="text-center mb-6">
           <div className="w-12 h-12 bg-[#24995E] rounded-[6px] mx-auto flex items-center justify-center mb-4">
             <Check color="#fff" />
