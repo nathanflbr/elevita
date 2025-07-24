@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "callToAction";
   onClick?: () => void;
   className?: string;
 }
@@ -22,6 +22,10 @@ export default function Button({
     secondary: {
       button: "text-[#566624]",
       icon: "bg-[#6D812D] border-[#BBD85E]",
+    },
+    callToAction: {
+      button: "text-[#D43B4B]",
+      icon: "bg-[#D43B4B] border-[#D43B4B]",
     },
   };
 
