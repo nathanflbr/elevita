@@ -12,6 +12,7 @@
   --font-sans: var(--font-figtree);
   --color-elevita: hsla(354, 93%, 60%, 1);
   --color-support: hsla(0, 0%, 12%, 0.6);
+  --color-complement-background: hsla(330, 24%, 93%, 1);
 }
 
 body {
