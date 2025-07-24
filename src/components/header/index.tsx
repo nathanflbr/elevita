@@ -1,5 +1,6 @@
-import { ArrowUpRight, LockKeyhole, Repeat } from "lucide-react";
+import { LockKeyhole, Repeat } from "lucide-react";
 import VideoPlayer from "./video-player";
+import Button from "../button";
 
 export default function Header() {
   return (
@@ -17,12 +18,9 @@ export default function Header() {
           showControls={true}
           showInfo={true}
         />
-        <button className="flex items-center text-start gap-3 bg-elevita text-white px-4 py-3 rounded-full mt-9 font-semibold hover:cursor-pointer">
-          <div className="bg-white/40 rounded-full p-2 w-fit border border-white">
-            <ArrowUpRight />
-          </div>
+        <Button variant="primary" className="mt-9">
           Garantir meu Kit Hoje Mesmo
-        </button>
+        </Button>
         <ul className="flex flex-col justify-center items-center text-support font-semibold mt-6 gap-3 xs:flex-row">
           <li className="flex items-center gap-2">
             <LockKeyhole /> Compra Segura
