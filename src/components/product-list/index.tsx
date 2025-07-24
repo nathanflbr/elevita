@@ -2,57 +2,12 @@ import { Truck } from "lucide-react";
 import Image from "next/image";
 import Button from "../button";
 import Link from "next/link";
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  originalPrice?: number;
-  image: string;
-  badge?: string;
-  picked?: boolean;
-  linkCheckout: string;
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Elevita Essencial",
-    description: "Início perfeito para sua jornada de transformação",
-    price: 97,
-    originalPrice: 147,
-    image: "/product/1-products.png",
-    badge: "Recomendado para 30 Dias",
-    linkCheckout:
-      "http://localhost:3000/obrigado?utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
-  },
-  {
-    id: 2,
-    name: "Kit Elevita Premium",
-    description: "Transformação completa com nossa fórmula revolucionária",
-    price: 197,
-    originalPrice: 297,
-    image: "/product/2-products.png",
-    badge: "Recomendado para 60 Dias",
-    picked: true,
-    linkCheckout:
-      "http://localhost:3000/obrigado?utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
-  },
-  {
-    id: 3,
-    name: "Elevita Pro",
-    description: "Resultados profissionais em casa",
-    price: 297,
-    originalPrice: 397,
-    image: "/product/3-products.png",
-    badge: "Recomendado para 90 Dias",
-    linkCheckout:
-      "http://localhost:3000/obrigado?utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
-  },
-];
+import { getAllProducts } from "@/data/products";
+import { Product } from "@/types/product";
 
 export default function ProductList() {
+  const products = getAllProducts();
+  
   return (
     <section className="py-16 px-4 bg-complement-background">
       <div id="products" className="max-w-7xl mx-auto">
@@ -66,7 +21,7 @@ export default function ProductList() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+          {products.map((product: Product) => (
             <div
               key={product.id}
               className={`bg-white rounded-[6px] border overflow-hidden flex flex-col h-full py-6 px-6 ${
