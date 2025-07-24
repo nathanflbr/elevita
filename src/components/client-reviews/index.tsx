@@ -57,7 +57,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function ClientReviews() {
   return (
-    <section className="py-16 px-4 bg-gray-50 lg:py-24">
+    <section className="py-16 px-4 bg-gray-50 lg:pt-24 lg:py-0">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h3 className="text-4xl md:text-5xl font-bold text-elevita mb-4">
@@ -97,22 +97,23 @@ export default function ClientReviews() {
             </div>
           ))}
         </div>
-
-        <div className="flex flex-col items-center p-8 bg-gradient-to-r from-[#D43B4B] to-[#FF8495] rounded-2xl mt-12 text-center text-white lg:mt-20">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Não Perca Esta Oportunidade Única!
-          </h3>
-          <p className="text-lg mb-6 opacity-90">
-            Transforme sua vida hoje mesmo com nossos nutracêuticos premium
-          </p>
-          <div className="flex justify-center mb-6">
-            <Button variant="callToAction" className="bg-white">
-              Começar Minha Transformação Agora!
-            </Button>
+        <div className="relative top-12">
+          <div className="flex flex-col items-center p-8 bg-gradient-to-r from-[#D43B4B] to-[#FF8495] rounded-2xl mt-12 text-center text-white lg:mt-20">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Não Perca Esta Oportunidade Única!
+            </h3>
+            <p className="text-lg mb-6 opacity-90">
+              Transforme sua vida hoje mesmo com nossos nutracêuticos premium
+            </p>
+            <div className="flex justify-center mb-6">
+              <Button variant="callToAction" className="bg-white">
+                Começar Minha Transformação Agora!
+              </Button>
+            </div>
+            <p className="text-sm opacity-80">
+              Oferta por tempo limitado - Últimas unidades disponíveis
+            </p>
           </div>
-          <p className="text-sm opacity-80">
-            Oferta por tempo limitado - Últimas unidades disponíveis
-          </p>
         </div>
       </div>
     </section>
