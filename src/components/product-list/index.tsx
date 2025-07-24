@@ -1,6 +1,7 @@
 import { Truck } from "lucide-react";
 import Image from "next/image";
 import Button from "../button";
+import Link from "next/link";
 
 interface Product {
   id: number;
@@ -11,6 +12,7 @@ interface Product {
   image: string;
   badge?: string;
   picked?: boolean;
+  linkCheckout: string;
 }
 
 const products: Product[] = [
@@ -22,6 +24,8 @@ const products: Product[] = [
     originalPrice: 147,
     image: "/product/1-products.png",
     badge: "Recomendado para 30 Dias",
+    linkCheckout:
+      "http://localhost:3000/obrigado?utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
   },
   {
     id: 2,
@@ -32,6 +36,8 @@ const products: Product[] = [
     image: "/product/2-products.png",
     badge: "Recomendado para 60 Dias",
     picked: true,
+    linkCheckout:
+      "http://localhost:3000/obrigado?utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
   },
   {
     id: 3,
@@ -41,13 +47,15 @@ const products: Product[] = [
     originalPrice: 397,
     image: "/product/3-products.png",
     badge: "Recomendado para 90 Dias",
+    linkCheckout:
+      "http://localhost:3000/obrigado?utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
   },
 ];
 
 export default function ProductList() {
   return (
     <section className="py-16 px-4 bg-complement-background">
-      <div className="max-w-7xl mx-auto">
+      <div id="products" className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 mb-4">
             Seu Kit de Transformação Completo
@@ -110,7 +118,9 @@ export default function ProductList() {
                 </div>
 
                 <div className="mt-auto flex flex-col items-center justify-center">
-                  <Button variant="secondary">Comprar agora</Button>
+                  <Link href={product.linkCheckout}>
+                    <Button variant="secondary">Comprar agora</Button>
+                  </Link>
 
                   <div className="text-center mt-3">
                     <span className="inline-flex items-center text-elevita font-bold gap-2 text-sm">
