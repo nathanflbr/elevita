@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   reactStrictMode: true,
+  devIndicators: false,
 };
 
 export default nextConfig;
