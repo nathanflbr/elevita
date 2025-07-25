@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CreditCard, Lock, AlertCircle, CheckCircle } from "lucide-react";
 import Button from "@/components/button";
 import { Product } from "@/types/product";
+import { addUtmsToUrl } from "@/utils/utm";
 
 function CheckoutContent() {
   const searchParams = useSearchParams();
@@ -193,7 +194,8 @@ function CheckoutContent() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm() && productId) {
-      router.push(`/obrigado?id=${productId}`);
+      const obrigadoUrl = addUtmsToUrl(`/obrigado?id=${productId}`);
+      router.push(obrigadoUrl);
     }
   };
 
@@ -669,16 +671,16 @@ function CheckoutContent() {
                       <div className="flex items-center gap-2">
                         {product.originalPrice && (
                           <span className="text-sm text-gray-500 line-through">
-                            {product.originalPrice.toLocaleString('pt-BR', {
-                              style: 'currency',
-                              currency: 'BRL'
+                            {product.originalPrice.toLocaleString("pt-BR", {
+                              style: "currency",
+                              currency: "BRL",
                             })}
                           </span>
                         )}
                         <span className="font-semibold text-gray-900">
-                          {product.price.toLocaleString('pt-BR', {
-                            style: 'currency',
-                            currency: 'BRL'
+                          {product.price.toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL",
                           })}
                         </span>
                       </div>
@@ -691,9 +693,9 @@ function CheckoutContent() {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Subtotal</span>
                   <span className="font-semibold">
-                    {product.price.toLocaleString('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL'
+                    {product.price.toLocaleString("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
                     })}
                   </span>
                 </div>
@@ -705,10 +707,14 @@ function CheckoutContent() {
                   <div className="flex justify-between">
                     <span className="text-gray-600">Desconto</span>
                     <span className="font-semibold text-green-600">
-                      -{(product.originalPrice - product.price).toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
-                      })}
+                      -
+                      {(product.originalPrice - product.price).toLocaleString(
+                        "pt-BR",
+                        {
+                          style: "currency",
+                          currency: "BRL",
+                        }
+                      )}
                     </span>
                   </div>
                 )}
@@ -716,9 +722,9 @@ function CheckoutContent() {
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
                     <span>
-                      {product.price.toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
+                      {product.price.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
                       })}
                     </span>
                   </div>
@@ -763,13 +769,15 @@ function CheckoutContent() {
 
 export default function Checkout() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 py-8 px-4 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-gray-600">Carregando...</p>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 py-8 px-4 flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-gray-600">Carregando...</p>
+          </div>
         </div>
-      </div>
-    }>
+      }
+    >
       <CheckoutContent />
     </Suspense>
   );

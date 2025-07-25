@@ -3,14 +3,13 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#FEF4F9] pt-14 lg:pt-36">
-      <div className="max-w-4xl mx-auto text-center px-3">
-        <div className="mb-6">
+      <div className="flex flex-col items-center max-w-4xl mx-auto text-center px-3">
+        <div className="mb-6 relative w-[180px] h-[80px]">
           <Image
-            src="/gruposix-logo.svg"
+            src="/logo/svg/gruposix.svg"
             alt="Grupo SIX"
-            width={200}
-            height={80}
-            className="mx-auto"
+            fill
+            sizes="180px"
           />
         </div>
         <p className="text-gray-600 text-sm mb-6 font-extrabold">
