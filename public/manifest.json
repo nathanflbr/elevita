@@ -1,0 +1,21 @@
+{
+  "name": "GRUPOSIX Elevita - Nutracêuticos",
+  "short_name": "Elevita",
+  "description": "Transforme sua saúde e beleza com nutracêuticos inovadores",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#D43B4B",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": ["health", "lifestyle", "shopping"],
+  "icons": [
+    {
+      "src": "/logo/svg/elevita.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

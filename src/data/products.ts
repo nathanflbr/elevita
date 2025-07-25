@@ -9,8 +9,7 @@ export const products: Product[] = [
     originalPrice: 147,
     image: "/product/1-products.png",
     badge: "Recomendado para 30 Dias",
-    linkCheckout:
-      "/checkout?id=1&utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
+    linkCheckout: "/checkout?id=1",
   },
   {
     id: 2,
@@ -21,8 +20,7 @@ export const products: Product[] = [
     image: "/product/2-products.png",
     badge: "Recomendado para 60 Dias",
     picked: true,
-    linkCheckout:
-      "/checkout?id=2&utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
+    linkCheckout: "/checkout?id=2",
   },
   {
     id: 3,
@@ -32,8 +30,7 @@ export const products: Product[] = [
     originalPrice: 397,
     image: "/product/3-products.png",
     badge: "Recomendado para 90 Dias",
-    linkCheckout:
-      "/checkout?id=3&utm_source=google&utm_medium=cpc&utm_campaign=promo2025",
+    linkCheckout: "/checkout?id=3",
   },
 ];
 

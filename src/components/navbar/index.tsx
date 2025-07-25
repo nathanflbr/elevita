@@ -5,12 +5,14 @@ export default function Navbar() {
   return (
     <nav className="flex bg-white items-center justify-center min-h-[68px]">
       <Link href="/">
-        <div>
+        <div className="relative w-[155px] h-[42px]">
           <Image
-            src="/elevita-logo.svg"
+            src="/logo/elevita.png"
             alt="Elevita GRUPOSIX"
-            width={155}
-            height={42}
+            fill
+            sizes="155px"
+            className="object-contain"
+            priority={true}
           />
         </div>
       </Link>
