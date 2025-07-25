@@ -33,7 +33,7 @@ export default async function Obrigado({ searchParams }: ObrigadoProps) {
           </h1>
           <p className="text-gray-600">Seu pedido foi confirmado com sucesso</p>
         </div>
-        <div className="max-w-md mx-auto bg-white rounded-2xl p-6 md:p-8">
+        <div className="bg-white rounded-2xl p-6 md:p-8 md:max-w-md md:mx-auto">
           <div className="bg-white">
             <div className="flex flex-col sm:flex-row items-center mb-4 gap-2 justify-center text-center sm:text-left">
               <Package className="mx-auto sm:mx-0" />
@@ -71,16 +71,16 @@ export default async function Obrigado({ searchParams }: ObrigadoProps) {
               <div className="text-right">
                 {product.originalPrice && (
                   <p className="text-sm text-gray-500 line-through">
-                    {product.originalPrice.toLocaleString('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL'
+                    {product.originalPrice.toLocaleString("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
                     })}
                   </p>
                 )}
                 <p className="font-semibold text-green-600 text-lg sm:text-base mt-2 sm:mt-0">
-                  {product.price.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL'
+                  {product.price.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
                   })}
                 </p>
               </div>
@@ -90,9 +90,9 @@ export default async function Obrigado({ searchParams }: ObrigadoProps) {
               <div className="flex justify-between text-sm">
                 <span className="text-gray-600">Subtotal:</span>
                 <span className="text-gray-900">
-                  {product.price.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL'
+                  {product.price.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
                   })}
                 </span>
               </div>
@@ -104,10 +104,14 @@ export default async function Obrigado({ searchParams }: ObrigadoProps) {
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Desconto:</span>
                   <span className="text-green-600 font-medium">
-                    -{(product.originalPrice - product.price).toLocaleString('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL'
-                    })}
+                    -
+                    {(product.originalPrice - product.price).toLocaleString(
+                      "pt-BR",
+                      {
+                        style: "currency",
+                        currency: "BRL",
+                      }
+                    )}
                   </span>
                 </div>
               )}
@@ -117,9 +121,9 @@ export default async function Obrigado({ searchParams }: ObrigadoProps) {
                     Total:
                   </span>
                   <span className="text-lg font-bold text-green-600">
-                    {product.price.toLocaleString('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL'
+                    {product.price.toLocaleString("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
                     })}
                   </span>
                 </div>
